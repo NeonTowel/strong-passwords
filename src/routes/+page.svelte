@@ -12,7 +12,7 @@
     error = null;
 
     try {
-      const response = await fetch(`https://pw.bkend.app/v1/generate/${count}`);
+      const response = await fetch(`https://pw.bkend.app/v2/generate/${count}`);
       if (!response.ok) {
         throw new Error("Failed to fetch passwords");
       }
@@ -84,9 +84,10 @@
           <div
             class="bg-rose-pine-surface p-4 rounded-lg border border-rose-pine-highlight-med"
           >
-            <p class="text-lg font-bold text-rose-pine-rose mb-2">
+            <p class="text-lg font-bold text-rose-pine-rose mb-1">
               {item.sentence}
             </p>
+            <p class="text-sm text-rose-pine-subtle mb-2">— {item.source}</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="bg-rose-pine-overlay p-3 rounded">
                 <p class="font-mono text-rose-pine-foam">
